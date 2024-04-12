@@ -27,3 +27,6 @@ async function buscarEMostrarVideos(){
             })
         
 }
+
+// chamando a funcion asyns se nao nao será executado,pois ela foi domente declarada.
+buscarEMostrarVideos();
