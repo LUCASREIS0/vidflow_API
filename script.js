@@ -44,3 +44,17 @@ async function buscarEMostrarVideos(){
 // Chamando a função assíncrona buscarEMostrarVideos().
 // Se não for chamada, ela não será executada, pois foi apenas declarada.
 buscarEMostrarVideos();
+
+const barraDePesquisa = document.querySelector(".pesquisar__input");
+
+barraDePesquisa.addEventListener("input", filtrarPesquisa);
+
+function filtrarPesquisa(){
+    const videos = document.querySelectorAll(".videos__item");
+
+    if(barraDePesquisa.value != ""){
+         else {
+         
+         }
+    }
+}
