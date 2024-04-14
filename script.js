@@ -1,7 +1,7 @@
-// Seleciona o elemento .videos__container e atribui a containerVideos //async await = (espera assíncrona). 
+// Seleciona o elemento .videos__container e atribui a containerVideos 
 const containerVideos = document.querySelector(".videos__container");
 
-//esse async está simplesmente indicando no JavaScript que vamos usar código assíncrono dentro dessa função. 
+// A palavra-chave 'async' define uma função como assíncrona em JavaScript.
 async function buscarEMostrarVideos(){
 
     // Para trabalhar com de tratamento de erros, usaremos um recurso chamado Try/Catch, que basicamente serão dois blocos.
@@ -41,5 +41,6 @@ async function buscarEMostrarVideos(){
     }   
 }
 
-// Chamando a  async function buscarEMostrarVideos() se nao nao será executado,pois ela foi somente declarada.
+// Chamando a função assíncrona buscarEMostrarVideos().
+// Se não for chamada, ela não será executada, pois foi apenas declarada.
 buscarEMostrarVideos();
