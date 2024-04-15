@@ -45,16 +45,46 @@ async function buscarEMostrarVideos(){
 // Se não for chamada, ela não será executada, pois foi apenas declarada.
 buscarEMostrarVideos();
 
+
+
+// Seleciona o elemento .pesquisar__input e atribui a barraDePesquisa
 const barraDePesquisa = document.querySelector(".pesquisar__input");
 
+// Adiciona um evento de input à barra de pesquisa, chamando a função filtrarPesquisa quando houver alterações
 barraDePesquisa.addEventListener("input", filtrarPesquisa);
 
-function filtrarPesquisa(){
+// Definição da função filtrarPesquisa
+function filtrarPesquisa() {
+    // Seleciona todos os elementos com a classe .videos__item e atribui a videos
     const videos = document.querySelectorAll(".videos__item");
 
-    if(barraDePesquisa.value != ""){
-         else {
-         
-         }
+    // Verifica se o valor da barra de pesquisa não está vazio
+    if (barraDePesquisa.value !== "") {
+       
+        // O loop 'for (let video of videos)' é utilizado para iterar sobre os elementos de uma coleção, como um array (ou uma lista de elementos similares). 
+        // Aqui, 'videos' é uma coleção que contém elementos sobre os quais queremos iterar, e a variável 'video' representa cada elemento individual da coleção durante cada iteração do loop.
+        // A palavra-chave 'of' é utilizada para indicar que estamos percorrendo os elementos da coleção 'videos', atribuindo cada elemento à variável 'video' a cada iteração.
+        // Este tipo de loop é comumente usado com arrays em JavaScript para realizar operações em cada elemento da lista.
+        // A variável video representa um elemento HTML da lista videos.
+        for (let video of videos) {
+            // Obtém o texto do título do vídeo e converte para minúsculas
+            let titulo = video.querySelector(".titulo-video").textContent.toLowerCase();
+            // Obtém o valor da barra de pesquisa e converte para minúsculas
+            let valorFiltro = barraDePesquisa.value.toLowerCase();
+
+            // Verifica se o título do vídeo contém o valor da barra de pesquisa
+            if (!titulo.includes(valorFiltro)) {
+                // Se não contém, oculta o vídeo
+                video.style.display = "none";
+            } else {
+                // Se contém, exibe o vídeo
+                video.style.display = "block";
+            }
+        }
+    } else {
+        // Se a barra de pesquisa estiver vazia, exibe todos os vídeos
+        for (let video of videos) {
+            video.style.display = "block";
+        }
     }
 }
