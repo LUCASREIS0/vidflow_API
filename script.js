@@ -18,7 +18,8 @@ async function buscarEMostrarVideos(){
                 // Para cada vídeo retornado, cria um item de lista HTML com as informações do vídeo.containerVideos.innerHTML
                 videos.forEach((video) => {
 
-                    // tratamento de erros personalizado. se a categoria for vazia, usaremos o throw new Error() tradução => "lançar novo Error()". Entre os parênteses, exibiremos uma mensagem, que é "Vídeo sem categoria".
+                    // tratamento de erros personalizado. se a categoria for vazia, usaremos o throw new Error() tradução => "lançar novo Error()".
+                    // Entre os parênteses, exibiremos uma mensagem, que é "Vídeo sem categoria".
                     if(video.categoria == ""){
                         throw new Error('Vídeo não tem categoria');
                     }
@@ -35,7 +36,8 @@ async function buscarEMostrarVideos(){
                     </li>
                     `;
                 })
-    //Catch (Capturar): O bloco catch é usado para lidar com a exceção que ocorreu no bloco try. Ele especifica o código que será executado para lidar com a exceção. O bloco catch recebe um parâmetro que representa o objeto de erro lançado.     
+    //Catch (Capturar): O bloco catch é usado para lidar com a exceção que ocorreu no bloco try. Ele especifica o código que será executado para lidar com a exceção.
+    //O bloco catch recebe um parâmetro que representa o objeto de erro lançado.     
     } catch(error){
         containerVideos.innerHTML = `<p> Houve um erro ao carregar os vídeos: ${error}</p>`
     }   
@@ -77,4 +79,6 @@ function filtrarPesquisa() {
     });
   }
   
-//Quando escrevemos código, é muito importante pensar não só na funcionalidade, mas também na organização do que estamos escrevendo, afinal aquele código pode precisar de manutenções futuras e é essencial que todas as pessoas desenvolvedoras que o leiam, compreendam. Nem sempre o melhor código vai ser o mais curto, mas é crucial que você se lembre sempre de “codar” de modo organizado e legível.
+//Quando escrevemos código, é muito importante pensar não só na funcionalidade, mas também na organização do que estamos escrevendo, 
+//afinal aquele código pode precisar de manutenções futuras e é essencial que todas as pessoas desenvolvedoras que o leiam, compreendam.
+//Nem sempre o melhor código vai ser o mais curto, mas é crucial que você se lembre sempre de “codar” de modo organizado e legível.
