@@ -68,7 +68,7 @@ function filtrarPesquisa() {
   
       // Verifica se há um filtro aplicado (se a barra de pesquisa não está vazia)
       if (valorFiltro) {
-        // Se o título do vídeo contém o texto filtrado, exibe o vídeo ('block'), senão oculta ('none')
+        // (CONDIÇÃO TERNARIA) Se o título do vídeo contém o texto filtrado, exibe o vídeo ('block'), senão oculta ('none')
         video.style.display = titulo.includes(valorFiltro) ? 'block' : 'none';
       } else {
         // Se não há filtro (barra de pesquisa vazia), exibe todos os vídeos ('block')
@@ -77,4 +77,4 @@ function filtrarPesquisa() {
     });
   }
   
-  //Quando escrevemos código, é muito importante pensar não só na funcionalidade, mas também na organização do que estamos escrevendo, afinal aquele código pode precisar de manutenções futuras e é essencial que todas as pessoas desenvolvedoras que o leiam, compreendam. Nem sempre o melhor código vai ser o mais curto, mas é crucial que você se lembre sempre de “codar” de modo organizado e legível.
+//Quando escrevemos código, é muito importante pensar não só na funcionalidade, mas também na organização do que estamos escrevendo, afinal aquele código pode precisar de manutenções futuras e é essencial que todas as pessoas desenvolvedoras que o leiam, compreendam. Nem sempre o melhor código vai ser o mais curto, mas é crucial que você se lembre sempre de “codar” de modo organizado e legível.
