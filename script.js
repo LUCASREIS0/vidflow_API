@@ -53,38 +53,28 @@ const barraDePesquisa = document.querySelector(".pesquisar__input");
 // Adiciona um evento de input à barra de pesquisa, chamando a função filtrarPesquisa quando houver alterações
 barraDePesquisa.addEventListener("input", filtrarPesquisa);
 
-// Definição da função filtrarPesquisa
+// Função para filtrar os vídeos com base no texto da barra de pesquisa
 function filtrarPesquisa() {
-    // Seleciona todos os elementos com a classe .videos__item e atribui a videos
-    const videos = document.querySelectorAll(".videos__item");
-
-    // Verifica se o valor da barra de pesquisa não está vazio
-    if (barraDePesquisa.value !== "") {
-       
-        // O loop 'for (let video of videos)' é utilizado para iterar sobre os elementos de uma coleção, como um array (ou uma lista de elementos similares). 
-        // Aqui, 'videos' é uma coleção que contém elementos sobre os quais queremos iterar, e a variável 'video' representa cada elemento individual da coleção durante cada iteração do loop.
-        // A palavra-chave 'of' é utilizada para indicar que estamos percorrendo os elementos da coleção 'videos', atribuindo cada elemento à variável 'video' a cada iteração.
-        // Este tipo de loop é comumente usado com arrays em JavaScript para realizar operações em cada elemento da lista.
-        // A variável video representa um elemento HTML da lista videos.
-        for (let video of videos) {
-            // Obtém o texto do título do vídeo e converte para minúsculas
-            let titulo = video.querySelector(".titulo-video").textContent.toLowerCase();
-            // Obtém o valor da barra de pesquisa e converte para minúsculas
-            let valorFiltro = barraDePesquisa.value.toLowerCase();
-
-            // Verifica se o título do vídeo contém o valor da barra de pesquisa
-            if (!titulo.includes(valorFiltro)) {
-                // Se não contém, oculta o vídeo
-                video.style.display = "none";
-            } else {
-                // Se contém, exibe o vídeo
-                video.style.display = "block";
-            }
-        }
-    } else {
-        // Se a barra de pesquisa estiver vazia, exibe todos os vídeos
-        for (let video of videos) {
-            video.style.display = "block";
-        }
-    }
-}
+    // Seleciona todos os elementos com a classe '.videos__item' e armazena em 'videos'
+    const videos = document.querySelectorAll('.videos__item');
+  
+    // Obtém o valor da barra de pesquisa em letras minúsculas
+    const valorFiltro = barraDePesquisa.value.toLowerCase();
+  
+    // Itera sobre cada vídeo na lista de vídeos
+    videos.forEach((video) => {
+      // Obtém o texto do título do vídeo em letras minúsculas
+      const titulo = video.querySelector('.titulo-video').textContent.toLowerCase();
+  
+      // Verifica se há um filtro aplicado (se a barra de pesquisa não está vazia)
+      if (valorFiltro) {
+        // Se o título do vídeo contém o texto filtrado, exibe o vídeo ('block'), senão oculta ('none')
+        video.style.display = titulo.includes(valorFiltro) ? 'block' : 'none';
+      } else {
+        // Se não há filtro (barra de pesquisa vazia), exibe todos os vídeos ('block')
+        video.style.display = 'block';
+      }
+    });
+  }
+  
+  //Quando escrevemos código, é muito importante pensar não só na funcionalidade, mas também na organização do que estamos escrevendo, afinal aquele código pode precisar de manutenções futuras e é essencial que todas as pessoas desenvolvedoras que o leiam, compreendam. Nem sempre o melhor código vai ser o mais curto, mas é crucial que você se lembre sempre de “codar” de modo organizado e legível.
