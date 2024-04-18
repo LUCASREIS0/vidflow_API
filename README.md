@@ -7,7 +7,7 @@ Este projeto é voltado para JavaScript, focado no desenvolvimento e aplicação
 
 ### Descrição 📝
 
-O VidFlow é uma plataforma de compartilhamento de vídeos que permite aos usuários visualizar e filtrar vídeos por categoria. O projeto foi construído integrando um layout previamente definido em um aplicativo funcional usando JavaScript. Utilizei a Fake JSON Server como uma API de exemplo para simular o consumo de dados.
+O VidFlow é uma plataforma de Compartilhamento de vídeos que permite aos usuários visualizar e filtrar vídeos por categoria. Projeto construído  usando JavaScript. Utilizei a Fake JSON Server como uma API de exemplo para simular o consumo de dados.
 
 ### Funcionalidades Implementadas 🔎
 
