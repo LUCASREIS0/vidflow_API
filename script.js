@@ -119,7 +119,7 @@ function filtrarPorCategoria(filtro) {
             // Se a categoria não corresponde ao filtro selecionado e não é 'tudo', oculta o vídeo
             video.style.display = "none";
         } else {
-            // Se a categoria corresponde ao filtro selecionado ou o filtro é 'tudo', exibe o vídeo
+            // Se a categoria corresponde ao filtro selecionado ou o filtro é 'tudo', exibe o vídeo.
             video.style.display = "block";
         }
     }
