@@ -32,9 +32,11 @@ async function buscarEMostrarVideos(){
                             <img class="img-canal" src="${video.imagem}" alt="Logo do Canal">
                             <h3 class="titulo-video">${video.titulo}</h3>
                             <p class="descricao-video">${video.descricao}</p>
+                            <p class="categoria" hidden>${video.categoria}</p>
                         </div>
                     </li>
-                    `;
+                    `; 
+                    //Dentro, passamos class="categoria" seguido de hidden, ou seja, essa tag ficará escondida, servirá apenas para captar a categoria do vídeo proveniente da API.
                 })
     //Catch (Capturar): O bloco catch é usado para lidar com a exceção que ocorreu no bloco try. Ele especifica o código que será executado para lidar com a exceção.
     //O bloco catch recebe um parâmetro que representa o objeto de erro lançado.     
@@ -84,22 +86,37 @@ function filtrarPesquisa() {
 //Nem sempre o melhor código vai ser o mais curto, mas é crucial que você se lembre sempre de “codar” de modo organizado e legível.
 
 
+
+// Seleciona todos os elementos com a classe '.superior__item' e atribui a botaoCategoria
 const botaoCategoria = document.querySelectorAll(".superior__item");
 
+// Itera sobre cada botão de categoria encontrado
 botaoCategoria.forEach((botao) => {
+    // Obtém o atributo 'name' de cada botão, que corresponde ao nome da categoria
     let nomeCategoria = botao.getAttribute("name");
+    
+    // Adiciona um evento de clique a cada botão, chamando a função filtrarPorCategoria com o nome da categoria como argumento
     botao.addEventListener("click", () => filtrarPorCategoria(nomeCategoria));
 })
 
-function filtrarPorCategoria(filtro){
+// Função para filtrar os vídeos por categoria
+function filtrarPorCategoria(filtro) {
+    // Seleciona todos os elementos com a classe '.videos__item' e armazena em 'videos'
     const videos = document.querySelectorAll(".videos__item");
-    for(let video of videos){
+
+    //Este trecho de código utiliza um loop 'for...of' para percorrer cada vídeo na lista de vídeos.
+    //O loop atribui cada vídeo da lista à variável 'video' em cada iteração,
+    for (let video of videos) {
+        // Obtém o texto da categoria do vídeo em letras minúsculas
         let categoria = video.querySelector(".categoria").textContent.toLowerCase();
         let valorFiltro = filtro.toLowerCase();
 
-        if(!categoria.includes(valorFiltro) && valorFiltro != 'tudo'){
+        // Verifica se a categoria do vídeo não inclui o valor do filtro e se o filtro não é 'tudo'
+        if (!categoria.includes(valorFiltro) && valorFiltro !== 'tudo') {
+            // Se a categoria não corresponde ao filtro selecionado e não é 'tudo', oculta o vídeo
             video.style.display = "none";
         } else {
+            // Se a categoria corresponde ao filtro selecionado ou o filtro é 'tudo', exibe o vídeo
             video.style.display = "block";
         }
     }
