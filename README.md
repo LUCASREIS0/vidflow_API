@@ -3,7 +3,7 @@
 
 ## Projeto VidFlow 💻
 
-Este é um projeto desenvolvido como parte de um curso de JavaScript, onde aprendi a consumir uma API, implementar filtros dinâmicos e traduzir um layout predefinido em uma aplicação funcional.
+Este projeto é voltado para JavaScript, focado no desenvolvimento e aplicação dos meus conhecimentos. O objetivo principal é trabalhar com a manipulação e consumo de dados de uma API.
 
 ### Descrição 📝
 
